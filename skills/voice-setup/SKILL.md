@@ -337,16 +337,21 @@ Create or append to `CLAUDE.md`:
 ```markdown
 ## Voice Output
 
-After each conversational response (not after tool-only turns), write a short spoken summary to `<project>/last_response.txt` using the Write tool. The Stop hook reads this file aloud via edge-tts.
+  **MANDATORY — NOT OPTIONAL.** After EVERY conversational response (including single-sentence replies), you MUST call
+  the Write tool to save a spoken summary to `<project>/last_response.txt`. Your turn is incomplete until this file is
+  written. Short replies are NO exception — writing one sentence takes 2 seconds.
 
-This is NOT the full response — it's a 1-3 sentence spoken summary. Rules:
-- Pure natural spoken Chinese, like you're talking to someone
-- No markdown, no code, no table data, no file paths, no symbols
-- Skip details the user can read on screen (code, tables, lists)
-- Just tell them the key takeaway in plain speech
-- If the response was purely operational (tool output, file read), still write a one-line summary
+  The Stop hook reads this file aloud via edge-tts. If you skip this step, the user hears silence and the feature
+  breaks.
 
-Write ONLY the text to be spoken — no prefixes, no labels.
+  This is a 1-3 sentence spoken summary of your response. Rules:
+  - Pure natural spoken Chinese, like you're talking to someone
+  - No markdown, no code, no table data, no file paths, no symbols
+  - Skip details the user can read on screen
+  - Just tell them the key takeaway in plain speech
+  - If the response was purely operational (tool output, file read), still write a one-line summary
+
+  Write ONLY the text to be spoken — no prefixes, no labels.
 ```
 
 Replace `<project>` with the actual project directory path.
