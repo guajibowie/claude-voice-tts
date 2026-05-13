@@ -1,0 +1,13 @@
+{
+  "name": "claude-voice-tts",
+  "version": "1.0.0",
+  "description": "Claude Code 语音输出插件。使用 edge-tts 朗读 Claude 的回复。",
+  "author": {
+    "name": "guajibowie"
+  },
+  "license": "MIT",
+  "keywords": ["voice", "tts", "speech", "edge-tts", "accessibility", "chinese"],
+  "skills": "./skills/",
+  "homepage": "https://github.com/guajibowie/claude-voice-tts",
+  "repository": "https://github.com/guajibowie/claude-voice-tts"
+}
