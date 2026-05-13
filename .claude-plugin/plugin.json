@@ -1,6 +1,6 @@
 {
   "name": "claude-voice-tts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Claude Code 语音输出插件。使用 edge-tts 朗读 Claude 的回复。",
   "author": {
     "name": "guajibowie"
